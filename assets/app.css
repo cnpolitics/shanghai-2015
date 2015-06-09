@@ -452,7 +452,7 @@ a {
 }
 .hero .logo {
   position: absolute;
-  top: calc(100vh - (84em * 2 / 16) - 72px);
+  top: calc(100% - (84em * 2 / 16) - 72px);
   left: 50%;
   margin-left: -64px;
   display: block;
@@ -462,7 +462,7 @@ a {
 }
 .events-wrap {
   position: absolute;
-  top: calc(100vh - (84em * 2 / 16));
+  top: calc(100% - (84em * 2 / 16));
   box-sizing: border-box;
   width: 100%;
   height: 10.5em;
@@ -514,6 +514,7 @@ a {
 }
 .card header {
   position: relative;
+  margin: 0 1em;
   padding-top: 0.75em;
   text-align: center;
 }
@@ -539,9 +540,10 @@ a {
   margin-bottom: 1em;
   line-height: 1.625;
 }
-.active .card {
+.card-wrap.active .card {
   height: 100%;
-  overflow: scroll;
+  overflow-x: hidde;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 /*# sourceMappingURL=app.css.map */
