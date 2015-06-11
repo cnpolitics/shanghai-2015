@@ -460,57 +460,54 @@ a {
   height: auto;
   padding-left: 0.375em;
 }
-.events-wrap {
-  position: absolute;
-  top: calc(100% - (84em * 2 / 16));
-  box-sizing: border-box;
-  width: 100%;
-  height: 10.5em;
-  overflow: hidden;
-  -webkit-transition: height 0s linear 0.5s, -webkit-transform 0.5s ease-in-out;
-          transition: height 0s linear 0.5s, transform 0.5s ease-in-out;
+.events-wrap.active .card-wrap {
+  z-index: 300;
+  -webkit-transform: translate3d(0, calc(100vh - 5.25em), 0);
+          transform: translate3d(0, calc(100vh - 5.25em), 0);
 }
-.events-wrap .card-wrap {
-  position: absolute;
+.card-wrap {
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box;
-  border-left: 4px solid rgba(0, 0, 0, 0);
-  border-right: 4px solid rgba(0, 0, 0, 0);
-  border-top: 4px solid rgba(0, 0, 0, 0);
-}
-.events-wrap .card-wrap.event-1 {
-  top: 0;
-  height: 10.5em;
-}
-.events-wrap .card-wrap.event-1.active {
   height: 100%;
-}
-.events-wrap .card-wrap.event-2 {
-  top: 5.25em;
-  height: 5.25em;
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
           transition: transform 0.5s ease-in-out;
 }
-.events-wrap.active {
-  height: 100%;
-  -webkit-transform: translate3d(0, calc(-100vh + (84em * 2 / 16)), 0);
-          transform: translate3d(0, calc(-100vh + (84em * 2 / 16)), 0);
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-          transition: transform 0.5s ease-out;
+.card-wrap.active {
+  z-index: 0 !important;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+          transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
-.events-wrap.active .event-2 {
-  -webkit-transform: translate3d(0, calc(100vh - (84em * 2 / 16)), 0);
-          transform: translate3d(0, calc(100vh - (84em * 2 / 16)), 0);
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-          transition: transform 0.5s ease-out;
+.card-wrap.event-1 {
+  -webkit-transform: translate3d(0, calc(100vh - 10.5em), 0);
+          transform: translate3d(0, calc(100vh - 10.5em), 0);
 }
-.card {
-  width: 100%;
-  min-height: 100%;
-  border-radius: 0.25em;
-  background-color: #fcfcfc;
+.card-wrap.event-2 {
+  -webkit-transform: translate3d(0, calc(100vh - 5.25em), 0);
+          transform: translate3d(0, calc(100vh - 5.25em), 0);
+}
+.card-wrap.event-1.active {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.card-wrap.event-2.active {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.card-wrap .card {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.25em 0.25em 0 0.25em;
+  border-radius: 0.25em 0.25em 0 0;
   box-shadow: 0 0 0.25em 0.125em rgba(0, 0, 0, 0.25);
+  background-color: #fcfcfc;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.card-wrap.active .card {
+  height: 100%;
 }
 .card header {
   position: relative;
@@ -539,11 +536,5 @@ a {
 .card article p {
   margin-bottom: 1em;
   line-height: 1.625;
-}
-.card-wrap.active .card {
-  height: 100%;
-  overflow-x: hidde;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 /*# sourceMappingURL=app.css.map */
