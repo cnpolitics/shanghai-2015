@@ -1,7 +1,12 @@
 .events-wrap.active {
 	.card-wrap {
 		z-index: 300;
-		transform: translate3d(0, calc(100vh - 5.25em), 0);
+		transform: translate3d(0, calc(100vh - 3.5em), 0);
+	}
+	
+	.card-wrap.center {
+		z-index: 200;
+		transform: translate3d(0, calc(100vh - 7em), 0);
 	}
 }
 
@@ -11,17 +16,20 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: transform .5s ease-in-out;
+	transition: transform .65s ease-in-out;
 	
 	&.active {
 		z-index: 0 !important;
-		transition: transform .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+		transition: transform .5s cubic-bezier(0.18, 0.89, 0.32, 1.18);
 	}
 	
+	/* Size of cards */
 	&.event-1 { transform: translate3d(0, calc(100vh - 10.5em), 0); }
-	&.event-2 { transform: translate3d(0, calc(100vh - 5.25em), 0); }	
+	&.event-2 { transform: translate3d(0, calc(100vh - 7em), 0); }
+	&.event-3 { transform: translate3d(0, calc(100vh - 3.5em), 0); }
 	&.event-1.active { transform: translate3d(0, 0, 0); }
 	&.event-2.active { transform: translate3d(0, 0, 0); }
+	&.event-3.active { transform: translate3d(0, 0, 0); }
 
 	.card {
 		overflow-x: hidden;
