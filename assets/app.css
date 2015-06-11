@@ -527,14 +527,70 @@ a {
   line-height: 1.5;
 }
 .card article {
-  margin: 1em 1em 6.25em 1em;
+  margin: 5em 1.21875em 8.25em 1.21875em;
 }
 .card article h1 {
-  font-size: 1.125em;
-  line-height: 1.5;
+  margin-bottom: 1em;
+  color: #b42800;
+  font-size: 1.375em;
+  text-align: center;
+  line-height: 1.27272727;
 }
-.card article p {
+.card article .subtitle {
+  color: #333333;
+  font-weight: 400;
+}
+.card article section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.card article section::before {
+  content: "";
+  display: block;
+  margin: 2.5em auto;
+  width: 4em;
+  height: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.card article section h3 {
+  width: 12.25em;
+  margin: 0 auto;
+  color: #b42800;
+  font-size: 1.125em;
+  text-align: center;
+  line-height: 1.33333333;
+}
+.card article section h4 {
+  margin-bottom: 1em;
+  font-size: 1em;
+  text-align: center;
+}
+.card article section p {
   margin-bottom: 1em;
   line-height: 1.625;
+}
+.card article section .speaker {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+.card article section .speaker img {
+  display: block;
+  width: 4em;
+  height: 4em;
+  margin: 0 auto .5em;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.card article section .speaker p {
+  margin-bottom: 0;
+}
+.card article section .speaker .bio {
+  width: 16em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  opacity: .75;
 }
 /*# sourceMappingURL=app.css.map */
