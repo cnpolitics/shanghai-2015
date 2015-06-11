@@ -1,0 +1,1 @@
+$(function(){FastClick.attach(document.body)}),$("button, a").on("touchstart",function(){$(this).addClass("pressing"),$("button, a").on("touchend",function(){$(this).removeClass("pressing")})}),$(".event-1 header").click(function(){$(".event-1").hasClass("active")?$(".event-1, .events-wrap").removeClass("active"):$(".event-1, .events-wrap").addClass("active")});
