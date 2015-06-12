@@ -1,4 +1,6 @@
 (function() {
+	'use strict';
+	
 	// Click 1st card.
 	$('.event-1 header').click(function() {
 		if ($('.event-1').hasClass('active')) {
