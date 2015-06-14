@@ -1,6 +1,17 @@
 (function() {
 	'use strict';
 	
+	// Switch pressing effect for touch device.
+	$('.card-wrap').on('touchstart', function() {
+		// Ignore active card to prevent the conflict with `overflow` hack.
+		if ($(this).hasClass('active')) { return; }
+		
+		$(this).children('.card').addClass('pressing');
+		$('.card-wrap').on('touchend', function() {
+			$(this).children('.card').removeClass('pressing');
+		});
+	});
+	
 	// Click 1st card.
 	$('.event-1 header').click(function() {
 		if ($('.event-1').hasClass('active')) {
@@ -70,6 +81,15 @@
 					$('.event-3').css('height', 'auto');
 				}, 500);
 			}
+		}
+	});
+	
+	// Listen window size to control the cards' scroll mode.
+	$(window).on('resize', function() {
+		$('.card-wrap').css('height', '');
+		
+		if (winWidth >= 960) {
+			$('.card-wrap.active').css('height', 'auto');
 		}
 	});
 	
