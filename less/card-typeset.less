@@ -2,11 +2,13 @@
 	header {
 		position: relative;
 		margin: 0 1em;
-		@media (min-width: 960px) {
-			margin-top: 4em;
-		}
 		padding-top: (12em/16);
+		@media (min-width: 960px) {
+			padding-top: (12em/16 + 4);
+		}
 		text-align: center;
+		cursor: pointer;
+		user-select: none;
 		
 		h1 {
 			margin-bottom: .125em;
@@ -20,8 +22,14 @@
 			font-size: (12em/16);
 			line-height: (18/12);
 		}
+		
+		@media (min-width: 960px) {
+			h1, p { transition: color .25s ease-in-out; }
+			&:hover {
+				h1, p { color: @theme; }
+			}
+		}
 	}
-	
 	article {
 		max-width: 32.25em;
 		margin: 5em auto (10.5em);
