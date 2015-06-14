@@ -2,6 +2,7 @@
 	.card-wrap {
 		z-index: 300;
 		transform: translate3d(0, calc(100% - 3.5em), 0);
+		transition: transform .65s ease-in-out, z-index 0s linear 0s;
 	}
 	
 	.card-wrap.center {
@@ -16,11 +17,11 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: transform .65s ease-in-out;
+	transition: transform .75s cubic-bezier(0.18, 0.89, 0.32, 1.18), z-index 0s linear .55s;
 	
 	&.active {
 		z-index: 0 !important;
-		transition: transform .5s cubic-bezier(0.18, 0.89, 0.32, 1.18);
+		transition: transform .75s cubic-bezier(0.18, 0.89, 0.32, 1.18), z-index 0s linear 0s !important;
 	}
 	
 	/* Size of cards */
