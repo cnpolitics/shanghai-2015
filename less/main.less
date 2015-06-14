@@ -15,12 +15,18 @@
 	
 	.logo {
 		position: absolute;
-		top: calc(100% - (84em * 2 / 16) - 72px);
+		top: calc(100% - (84em * 2 / 16) - 72px);		
 		left: 50%;
 		margin-left: -64px;
 		display: block;
 		width: (128em/16);
 		height: auto;
 		padding-left: (6em/16);
+		
+		@media (min-width: 960px) {
+			position: fixed;
+			top: auto;
+			bottom: 2em;	
+		}
 	}
 }
