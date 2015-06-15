@@ -98,7 +98,7 @@
 	}
 	
 	// Click blank space (<body>) or press [ESC], to pop off the active card.
-	$('body').click( popOffActiveCard );
+//	$('body').click( popOffActiveCard );
 	$(document).keyup(function(e) { 
 		if (e.keyCode === 27) {
 			popOffActiveCard();
