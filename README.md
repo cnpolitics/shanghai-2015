@@ -1,3 +1,5 @@
 # Memo
 
-- Fix the Safari iPhone viewport height issue: calc the height of `body` by JS.
+- Fix `calc` compatibility for MQQBrowser.
+- Check the `calc` compatibility for IE.
+- Update `favicon`, `apple-touch-icon` and `wechat-thumb`.

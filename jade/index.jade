@@ -6,6 +6,9 @@ html(lang="en")
 	include _head.jade
 
 	body.gb-punct
+		.wechat-thumb(style="display:none")
+			img(src="assets/wechat-thumb.jpg")
+			
 		.hero
 			.hero-bg
 			img(src="assets/logo.svg").logo
@@ -15,24 +18,24 @@ html(lang="en")
 				.card
 					header
 						h1 如何在西方观察中国？
-						p <time datetime="2015-06-18 15:00">6 月 18 日下午 3 时</time>，复旦大学
+						p <time datetime="2015-06-18 15:00">6 月 18 日下午 3 时</time>起·复旦大学邯郸校区
 					article
-						include ./copy/copy1.html
+						include ./copy/copy1.jade
 
 			.card-wrap.event-2
 				.card
 					header
 						h1 西方看待中国政治的洞见和偏见
-						p <time datetime="2015-06-20 13:00">6 月 20 日时间未定</time>，地点未定
+						p <time datetime="2015-06-19 14:00">6 月 19 日下午 2 时</time>起·浦东新区证大立方大厦
 					article
-						include ./copy/copy2.html
-			
+						include ./copy/copy2.jade
+	
 			.card-wrap.event-3
 				.card
 					header
-						h1 第三场活动
-						p <time datetime="2015-06-22">6 月 22 日时间未定</time>，地点未定
+						h1 一对一私聊
+						p 来信预约·坐标上海
 					article
-						include ./copy/copy3.html
-
+						include ./copy/copy3.jade
+		
 	script(type="text/javascript" src="assets/app.js")

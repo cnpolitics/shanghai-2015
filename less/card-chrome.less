@@ -1,7 +1,12 @@
+@media (max-width: 959px) {
+
 .events-wrap.active {
 	.card-wrap {
 		z-index: 300;
 		transform: translate3d(0, calc(100% - 3.5em), 0);
+		transition:
+			transform .75s cubic-bezier(0.18, 0.89, 0.32, 1.18),
+			z-index 0s linear 0s;
 	}
 	
 	.card-wrap.center {
@@ -16,12 +21,9 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: transform .65s ease-in-out;
-	
-	&.active {
-		z-index: 0 !important;
-		transition: transform .5s cubic-bezier(0.18, 0.89, 0.32, 1.18);
-	}
+	transition:
+		transform .75s cubic-bezier(0.18, 0.89, 0.32, 1.18),
+		z-index 0s linear .55s;
 	
 	/* Size of cards */
 	&.event-1 { transform: translate3d(0, calc(100% - 10.5em), 0); }
@@ -31,18 +33,103 @@
 	&.event-2.active { transform: translate3d(0, 0, 0); }
 	&.event-3.active { transform: translate3d(0, 0, 0); }
 
+	&.active {
+		z-index: 0 !important;
+		transition:
+			transform .75s cubic-bezier(0.18, 0.89, 0.32, 1.18),
+			z-index 0s linear 0s !important;
+	}
+
 	.card {
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		margin: (4em/16) (4em/16) 0 (4em/16);
 		border-radius: (4em/16) (4em/16) 0 0;
-		box-shadow: 0 0 (4em/16) (2em/16) fadeout(black, 75%);
+		box-shadow: 0 0 (4em/16) (1em/16) fadeout(black, 75%);
 		background-color: @bg;
 		transform: translate3d(0, 0, 0);
+		
+		&.pressing {
+			box-shadow: 0 0 (6em/16) (2em/16) fadeout(black, 65%);
+		}
 	}
 
 	&.active .card {
 		height: 100%;
 	}
+}
+/*@media (max-width: 959px) END */
+}
+
+
+
+@media (min-width: 960px) {
+
+.events-wrap.active {
+	.card-wrap {
+		transform: translate3d((160em/16), 0, 0);
+	}
+	
+	.card-wrap.center {
+		transform: translate3d((-480em/16), 0, 0);
+	}
+}
+
+.card-wrap {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	width: (320em/16);
+	height: 8em;
+	min-height: 8em;
+	padding-bottom: 8em;
+	will-change: width, min-height, transform, z-index;
+	transition:
+		width .5s ease-in-out,
+		min-height .5s ease-in-out,
+		transform .5s ease-in-out,
+		z-index 0s linear .0s;
+	
+	/* Position of cards */
+	&.event-1 { transform: translate3d((-476em/16), 0, 0); }
+	&.event-2 { transform: translate3d((-160em/16), 0, 0); }
+	&.event-3 { transform: translate3d(( 156em/16), 0, 0); }
+
+	.card {
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+		margin: 0 (4em/16) (8em/16) (4em/16);
+		border-radius: 0 0 (4em/16) (4em/16);
+		box-shadow: 0 0 (4em/16) (1em/16) fadeout(black, 75%);
+		background-color: @bg;
+		transform: translate3d(0, 0, 0);
+		transition: box-shadow .25s ease-in-out;
+		
+		&:hover {
+			box-shadow: 0 0 (8em/16) (2em/16) fadeout(black, 65%);
+		}
+	}
+	
+	&.active {
+		position: absolute;
+		width: (640em/16);
+		min-height: 100%;
+		z-index: 300;
+		transform: translate3d((-320em/16), 0, 0) !important;
+		transition:
+			width .5s ease-in-out,
+			min-height .5s ease-in-out,
+			transform .5s ease-in-out,
+			z-index 0s linear 0s;
+		
+		.card {
+			border-radius: (4em/16);
+			overflow: auto;
+		}
+	}
+}
+/*@media (min-width: 960px) END */
 }
