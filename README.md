@@ -1,5 +1,5 @@
 # Memo
 
-- Fix `calc` compatibility for MQQBrowser.
+- Vertical overflow issue for MQQBrowser.
 - Check the `calc` compatibility for IE.
-- Update `favicon`, `apple-touch-icon` and `wechat-thumb`.
+- Update `favicon` and `apple-touch-icon`.
