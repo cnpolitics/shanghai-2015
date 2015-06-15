@@ -1,6 +1,39 @@
-/* global $ */
+/* global $, winWidth, winHeight, isMQQBrowser */
 (function() {
 	'use strict';
+	
+	
+	
+	// Fix the initial positioning. (`calc()` issue)
+	$(function() {
+		if (winWidth < 960 && isMQQBrowser) {
+//			console.log(winHeight);
+			$('.card-wrap.event-1').css({
+				'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+			});
+			$('.card-wrap.event-2').css({
+				'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+			});
+			$('.card-wrap.event-3').css({
+				'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+			});
+		}
+	});
+	$(window).on('resize', function() {
+		if (winWidth < 960 && isMQQBrowser) {
+			$('.card-wrap.event-1').css({
+				'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+			});
+			$('.card-wrap.event-2').css({
+				'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+			});
+			$('.card-wrap.event-3').css({
+				'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+			});
+		}
+	});
+	
+	
 
 	// Switch pressing effect for touch device.
 	$('.card-wrap').on('touchstart', function() {
@@ -13,11 +46,26 @@
 		});
 	});
 	
+	
+	
 	// Click 1st card.
-	$('.event-1 header').click(function(e) {
-		e.stopPropagation();
+	$('.event-1 header').click(function() {
+		//e.stopPropagation();
 		
 		if ($('.event-1').hasClass('active')) {
+			// Fix `calc` issue.
+			if (winWidth < 960 && isMQQBrowser) {
+				$('.card-wrap.event-1').css({
+					'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+				});
+				$('.card-wrap.event-2').css({
+					'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+				});
+				$('.card-wrap.event-3').css({
+					'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+				});
+			}
+			
 			// Pop off this card.
 			$('.event-1, .events-wrap').removeClass('active').css('height', '');
 			$('.card-wrap.center').removeClass('center');
@@ -26,6 +74,19 @@
 			if ($('.events-wrap').hasClass('active')) {
 				$('.card-wrap.active').removeClass('active').css('height', '');
 				$('.card-wrap.center').removeClass('center');
+				
+				// Fix `calc` issue.
+				if (winWidth < 960 && isMQQBrowser) {
+					$('.card-wrap.event-1').css({
+						'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+					});
+					$('.card-wrap.event-2').css({
+						'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+					});
+					$('.card-wrap.event-3').css({
+						'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+					});
+				}
 			}
 			
 			// Pop on the clicked card and re-order the other cards.
@@ -36,14 +97,40 @@
 					$('.event-1').css('height', 'auto');
 				}, 500);
 			}
+			
+			// Fix `calc` issue.
+			if (winWidth < 960 && isMQQBrowser) {
+				$('.card-wrap.event-1').css({
+					'transform': ''
+				});
+				$('.card-wrap.event-2').css({
+					'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+				});
+				$('.card-wrap.event-3').css({
+					'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+				});
+			}
 		}
 	});
 	
 	// Click 2nd card.
-	$('.event-2 header').click(function(e) {
-		e.stopPropagation();
+	$('.event-2 header').click(function() {
+		//e.stopPropagation();
 		
 		if ($('.event-2').hasClass('active')) {
+			// Fix `calc` issue.
+			if (winWidth < 960 && isMQQBrowser) {
+				$('.card-wrap.event-1').css({
+					'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+				});
+				$('.card-wrap.event-2').css({
+					'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+				});
+				$('.card-wrap.event-3').css({
+					'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+				});
+			}
+			
 			// Pop off this card.
 			$('.event-2, .events-wrap').removeClass('active').css('height', '');
 			$('.card-wrap.center').removeClass('center');
@@ -52,6 +139,19 @@
 			if ($('.events-wrap').hasClass('active')) {
 				$('.card-wrap.active').removeClass('active').css('height', '');
 				$('.card-wrap.center').removeClass('center');
+				
+				// Fix `calc` issue.
+				if (winWidth < 960 && isMQQBrowser) {
+					$('.card-wrap.event-1').css({
+						'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+					});
+					$('.card-wrap.event-2').css({
+						'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+					});
+					$('.card-wrap.event-3').css({
+						'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+					});
+				}
 			}
 			
 			// Pop on the clicked card and re-order the other cards.
@@ -62,14 +162,40 @@
 					$('.event-2').css('height', 'auto');
 				}, 500);
 			}
+			
+			// Fix `calc` issue.
+			if (winWidth < 960 && isMQQBrowser) {
+				$('.card-wrap.event-2').css({
+					'transform': ''
+				});
+				$('.card-wrap.event-1').css({
+					'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+				});
+				$('.card-wrap.event-3').css({
+					'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+				});
+			}
 		}
 	});
 	
 	// Click 3rd card.
-	$('.event-3 header').click(function(e) {
-		e.stopPropagation();
+	$('.event-3 header').click(function() {
+		//e.stopPropagation();
 		
 		if ($('.event-3').hasClass('active')) {
+			// Fix `calc` issue.
+			if (winWidth < 960 && isMQQBrowser) {
+				$('.card-wrap.event-1').css({
+					'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+				});
+				$('.card-wrap.event-2').css({
+					'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+				});
+				$('.card-wrap.event-3').css({
+					'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+				});
+			}
+			
 			// Pop off this card.
 			$('.event-3, .events-wrap').removeClass('active').css('height', '');
 			$('.card-wrap.center').removeClass('center');
@@ -78,6 +204,19 @@
 			if ($('.events-wrap').hasClass('active')) {
 				$('.card-wrap.active').removeClass('active').css('height', '');
 				$('.card-wrap.center').removeClass('center');
+				
+				// Fix `calc` issue.
+				if (winWidth < 960 && isMQQBrowser) {
+					$('.card-wrap.event-1').css({
+						'transform': 'translate3d(0, ' + (winHeight - 168) + 'px, 0)'
+					});
+					$('.card-wrap.event-2').css({
+						'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+					});
+					$('.card-wrap.event-3').css({
+						'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+					});
+				}
 			}
 			
 			// Pop on the clicked card and re-order the other cards.
@@ -88,8 +227,23 @@
 					$('.event-3').css('height', 'auto');
 				}, 500);
 			}
+			
+			// Fix `calc` issue.
+			if (winWidth < 960 && isMQQBrowser) {
+				$('.card-wrap.event-3').css({
+					'transform': ''
+				});
+				$('.card-wrap.event-1').css({
+					'transform': 'translate3d(0, ' + (winHeight - 112) + 'px, 0)'
+				});
+				$('.card-wrap.event-2').css({
+					'transform': 'translate3d(0, ' + (winHeight - 56) + 'px, 0)'
+				});
+			}
 		}
 	});
+	
+	
 	
 	function popOffActiveCard() {
 		$('.events-wrap.active').removeClass('active');
@@ -105,6 +259,8 @@
 		}
 	});
 	
+	
+	
 	// Listen window size to control the cards' scroll mode.
 	$(window).on('resize', function() {
 		$('.card-wrap').css('height', '');
@@ -113,6 +269,8 @@
 			$('.card-wrap.active').css('height', 'auto');
 		}
 	});
+	
+	
 	
 	/* Hack:
 	 * Fix the issue that overflowed element lost
