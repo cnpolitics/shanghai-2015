@@ -14,9 +14,10 @@ $(window).on('resize', function() {
 	//console.log(winWidth);
 });
 
-var isMQQBrowser;
+var isMQQBrowser, isTrident;
 $(function() {
 	isMQQBrowser = navigator.userAgent.match(/MQQBrowser/i);
+	isTrident = navigator.userAgent.match(/Trident/i);
 });
 
 // Fix the positioning. (`calc()` issue)

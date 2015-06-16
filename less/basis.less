@@ -1,5 +1,10 @@
 html {
 	height: 100%;
+	
+	@media (min-width: 960px) {
+		/* Hack for Windows desktop browsers to avoid the viewport width variation. */
+		overflow-y:scroll;
+	}
 }
 
 body {
@@ -44,6 +49,15 @@ button {
 
 .gb-punct {
 	font-family: "GB Punct", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans", "Noto Sans", sans-serif;
+}
+/* Fix the `unicode-range` issue for Mozilla. */
+@-moz-document url-prefix() {
+	.gb-punct {
+		font-family:
+			"Avenir Next", "Segoe UI", "Helvetica Neue", Arial,
+			"Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans", "Noto Sans",
+			sans-serif !important;
+	}
 }
 /*--- Chinese punctuation optimization END ---*/
 
