@@ -1,5 +1,10 @@
 html {
 	height: 100%;
+	
+	@media (min-width: 960px) {
+		/* Hack for Windows desktop browsers to avoid the viewport width variation. */
+		overflow-y:scroll;
+	}
 }
 
 body {
