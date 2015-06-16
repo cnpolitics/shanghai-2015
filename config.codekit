@@ -121,6 +121,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/assets\/qrcode-yinqin@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5709,
+		"inputAbbreviatedPath": "\/assets\/qrcode-yinqin@2x.png",
+		"outputAbbreviatedPath": "\/assets\/qrcode-yinqin@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/wechat-thumb.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1642,7 +1653,7 @@
 	"\/jade\/copy\/qrcode-yinqin.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/jade\/copy\/qrcode-yinqin.jade",
 		"outputAbbreviatedPath": "\/jade\/qrcode-yinqin.html",
