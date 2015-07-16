@@ -1,3 +1,1 @@
-# MEMO
-
-Clear.
+Test version: <http://cnpolitics.github.io/shanghai-2015/>
